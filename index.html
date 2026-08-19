@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Me / Love, / Me — A Book by Mahashwar</title>
+<meta name="description" content="A self-help book about living from love instead of fear. Expanding on the five love languages with three original additions. By Mahashwar.">
+<meta name="keywords" content="love languages, self love book, self help, five love languages, Gary Chapman, living from love, Mahashwar, love me book">
+<link rel="canonical" href="https://lovemebook.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --deep-blue: #152235;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: rgba(201,168,76,0.15);
+    --cream: #f9f5ef;
+    --warm-white: #fdfaf5;
+    --muted: #8a9bb0;
+    --soft-line: rgba(201,168,76,0.25);
+    --text-light: #d4cfc8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--navy);
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    line-height: 1.85;
+    font-size: 19px;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    background: rgba(13,27,42,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--soft-line);
+  }
+
+  .nav-title {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    line-height: 1.8;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 40px;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(72px, 10vw, 120px);
+    line-height: 1.05;
+    color: var(--warm-white);
+    margin-bottom: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-title .comma-line {
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 40px auto;
+    opacity: 0.6;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(20px, 2.5vw, 26px);
+    color: var(--text-light);
+    max-width: 560px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .hero-author {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 52px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 18px 48px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  .coming-soon {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    margin-top: 16px;
+    font-style: italic;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--muted);
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  .section-full {
+    max-width: 100%;
+    padding: 100px 40px;
+  }
+
+  .section-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 40px;
+    color: var(--warm-white);
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--soft-line);
+    margin: 0;
+  }
+
+  p { margin-bottom: 24px; font-weight: 300; color: var(--text-light); }
+
+  /* ─── EXCERPT ─── */
+  .excerpt-section {
+    background: var(--deep-blue);
+    border-top: 1px solid var(--soft-line);
+    border-bottom: 1px solid var(--soft-line);
+  }
+
+  .excerpt-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  .excerpt-text {
+    font-size: clamp(20px, 2.5vw, 24px);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--cream);
+    border-left: 2px solid var(--gold);
+    padding-left: 36px;
+    margin-bottom: 32px;
+  }
+
+  .excerpt-source {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-left: 36px;
+  }
+
+  /* ─── THE BOOK ─── */
+  .book-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--soft-line);
+    border: 1px solid var(--soft-line);
+    margin-top: 56px;
+  }
+
+  .book-part {
+    background: var(--navy);
+    padding: 40px 32px;
+  }
+
+  .part-number {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 9px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .part-title {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--warm-white);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .chapter-list {
+    list-style: none;
+  }
+
+  .chapter-list li {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    line-height: 1.5;
+  }
+
+  .chapter-list li:last-child { border-bottom: none; }
+
+  /* ─── LOVE LANGUAGES ─── */
+  .languages-section {
+    background: var(--deep-blue);
+    border-top: 1px solid var(--soft-line);
+    border-bottom: 1px solid var(--soft-line);
+  }
+
+  .languages-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  .languages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 56px;
+  }
+
+  .language-group-title {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--soft-line);
+  }
+
+  .language-item {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    font-size: 17px;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  .language-item.original {
+    color: var(--gold-light);
+  }
+
+  .language-item.original::before {
+    content: '✦ ';
+    color: var(--gold);
+    font-size: 10px;
+  }
+
+  /* ─── PAIRED BOOKS ─── */
+  .paired-intro {
+    font-size: clamp(18px, 2vw, 22px);
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+  }
+
+  .book-card {
+    border: 1px solid var(--soft-line);
+    padding: 28px 24px;
+    background: var(--gold-dim);
+    transition: border-color 0.3s;
+  }
+
+  .book-card:hover { border-color: var(--gold); }
+
+  .book-card-title {
+    font-style: italic;
+    font-size: 17px;
+    color: var(--warm-white);
+    margin-bottom: 6px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .book-card-author {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .book-card-bridge {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+
+  /* ─── AUTHOR ─── */
+  .author-section {
+    background: var(--deep-blue);
+    border-top: 1px solid var(--soft-line);
+  }
+
+  .author-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  .author-bio {
+    font-size: clamp(18px, 2vw, 21px);
+    line-height: 1.9;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  .author-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--warm-white);
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  /* ─── EMAIL CAPTURE ─── */
+  .capture-section {
+    text-align: center;
+    border-top: 1px solid var(--soft-line);
+    border-bottom: 1px solid var(--soft-line);
+  }
+
+  .capture-inner {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  .capture-form {
+    display: flex;
+    gap: 0;
+    margin-top: 40px;
+  }
+
+  .capture-input {
+    flex: 1;
+    padding: 16px 24px;
+    background: var(--deep-blue);
+    border: 1px solid var(--soft-line);
+    border-right: none;
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    outline: none;
+  }
+
+  .capture-input::placeholder { color: var(--muted); }
+  .capture-input:focus { border-color: var(--gold); }
+
+  .capture-btn {
+    padding: 16px 32px;
+    background: var(--gold);
+    border: none;
+    color: var(--navy);
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .capture-btn:hover { background: var(--gold-light); }
+
+  .capture-note {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-top: 16px;
+  }
+
+  /* ─── FINAL CTA ─── */
+  .final-cta {
+    text-align: center;
+    padding: 120px 40px;
+  }
+
+  .final-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(48px, 7vw, 80px);
+    line-height: 1.1;
+    color: var(--warm-white);
+    margin-bottom: 40px;
+  }
+
+  .final-title .gold { color: var(--gold); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--soft-line);
+    padding: 40px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-title {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    line-height: 2;
+  }
+
+  .footer-copy {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    section { padding: 72px 24px; }
+    .book-grid { grid-template-columns: 1fr; }
+    .languages-grid { grid-template-columns: 1fr; }
+    .books-grid { grid-template-columns: 1fr; }
+    .capture-form { flex-direction: column; }
+    .capture-input { border-right: 1px solid var(--soft-line); border-bottom: none; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-title">Love Me<br>Love,<br>Me</div>
+  <ul class="nav-links">
+    <li><a href="#excerpt">The Book</a></li>
+    <li><a href="#languages">Love Languages</a></li>
+    <li><a href="#reads-like">If You Loved</a></li>
+    <li><a href="#author">Mahashwar</a></li>
+    <li><a href="#notify">Stay Connected</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-eyebrow">A New Book</span>
+  <h1 class="hero-title">
+    Love Me<br>
+    <span class="comma-line">Love,</span>
+    Me
+  </h1>
+  <div class="hero-rule"></div>
+  <p class="hero-tagline">Live in love instead of living in fear — and you will find happiness, because happiness comes from within.</p>
+  <div class="hero-author">By Mahashwar</div>
+  <a href="#" class="btn-primary">Get the Book</a>
+  <p class="coming-soon">Available soon on Amazon</p>
+  <div class="hero-scroll">Scroll to explore</div>
+</div>
+
+<hr class="divider">
+
+<!-- EXCERPT -->
+<div class="excerpt-section" id="excerpt">
+  <div class="excerpt-inner">
+    <span class="section-label">From the Book</span>
+    <div class="excerpt-text">
+      I noticed something in the place where I had the least. On the hard days I counted what was missing. On the good days I counted what I had. Same walls. Same sky. Same food. The only variable was what I chose to count. So I tested it. I did it deliberately. I switched what I was counting. And everything changed.
+    </div>
+    <div class="excerpt-source">The discovery that became this book</div>
+  </div>
+</div>
+
+<!-- WHAT'S INSIDE -->
+<section id="inside">
+  <span class="section-label">What's Inside</span>
+  <h2 class="section-title">A road map back to yourself.<br>Written from the middle of the climb.</h2>
+  <p>Most self-help books are written from the mountaintop. This one is written from the trail. Mahashwar is still in it — still walking two miles with a healing heart, still sorting the files, still learning what love asks of him every single day. That rawness is what makes this book different. Not theory. Not a system. A life, examined honestly, offered to you as a guide.</p>
+
+  <div class="book-grid">
+    <div class="book-part">
+      <span class="part-number">Part One</span>
+      <div class="part-title">Finding Love in Yourself</div>
+      <ul class="chapter-list">
+        <li>What Is Love</li>
+        <li>Love Your Thoughts</li>
+        <li>Love Your Body</li>
+      </ul>
+    </div>
+    <div class="book-part">
+      <span class="part-number">Part Two</span>
+      <div class="part-title">Love in Every Language</div>
+      <ul class="chapter-list">
+        <li>Love Others</li>
+        <li>Words of Affirmation</li>
+        <li>Acts of Service</li>
+        <li>Receiving Gifts</li>
+        <li>Quality Time</li>
+        <li>Physical Touch</li>
+        <li>Solitude and Space ✦</li>
+        <li>Food as Love ✦</li>
+        <li>Costly Devotion ✦</li>
+      </ul>
+    </div>
+    <div class="book-part">
+      <span class="part-number">Part Three</span>
+      <div class="part-title">The Return</div>
+      <ul class="chapter-list">
+        <li>Know Yourself, Love Yourself</li>
+        <li>Loss of Love</li>
+        <li>Love the Planet</li>
+        <li>Conclusion</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top: 24px; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.15em; color: var(--muted);">✦ Original love languages not found in any other book</p>
+</section>
+
+<hr class="divider">
+
+<!-- LOVE LANGUAGES -->
+<div class="languages-section" id="languages">
+  <div class="languages-inner">
+    <span class="section-label">The Love Languages</span>
+    <h2 class="section-title">You know the five.<br>Here are three more.</h2>
+    <p>Gary Chapman's five love languages changed how millions of people see their relationships. This book honors that foundation and goes further — adding three original languages that Chapman's framework left out. Because the way you love is more expansive than anyone has given you credit for.</p>
+
+    <div class="languages-grid">
+      <div>
+        <div class="language-group-title">Chapman's Five</div>
+        <div class="language-item">Words of Affirmation</div>
+        <div class="language-item">Acts of Service</div>
+        <div class="language-item">Receiving Gifts</div>
+        <div class="language-item">Quality Time</div>
+        <div class="language-item">Physical Touch</div>
+      </div>
+      <div>
+        <div class="language-group-title">Three Original Additions</div>
+        <div class="language-item original">Solitude and Space</div>
+        <div class="language-item original">Food as Love</div>
+        <div class="language-item original">Costly Devotion</div>
+        <div style="margin-top: 24px; font-family: 'Jost', sans-serif; font-size: 12px; color: var(--muted); line-height: 1.8; font-weight: 200;">Each language is explored three ways: loving yourself, loving others, and loving your body.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IF YOU LOVED -->
+<section id="reads-like">
+  <span class="section-label">If You Loved These Books</span>
+  <h2 class="section-title">This one was written for you next.</h2>
+  <p class="paired-intro">The readers who found themselves in these books have found a next step in this one.</p>
+
+  <div class="books-grid">
+    <div class="book-card">
+      <div class="book-card-title">The Five Love Languages</div>
+      <div class="book-card-author">Gary Chapman</div>
+      <p class="book-card-bridge">Chapman showed you how others receive love. This book shows you how to give it to yourself first — and adds three languages he didn't include.</p>
+    </div>
+    <div class="book-card">
+      <div class="book-card-title">The Power of Now</div>
+      <div class="book-card-author">Eckhart Tolle</div>
+      <p class="book-card-bridge">Tolle gave you the platform. This book tells you what to do once you're standing on it — how to sort the files, choose your thoughts, and live from love.</p>
+    </div>
+    <div class="book-card">
+      <div class="book-card-title">You Are a Badass</div>
+      <div class="book-card-author">Jen Sincero</div>
+      <p class="book-card-bridge">Same honest voice. Same refusal to sugarcoat. This book brings that energy to the deepest question: what does it actually mean to love yourself?</p>
+    </div>
+    <div class="book-card">
+      <div class="book-card-title">The Four Agreements</div>
+      <div class="book-card-author">Don Miguel Ruiz</div>
+      <p class="book-card-bridge">Ruiz taught you to question the agreements you made about yourself. This book gives you a practice for rewriting the ones that no longer serve you.</p>
+    </div>
+    <div class="book-card">
+      <div class="book-card-title">The Secret</div>
+      <div class="book-card-author">Rhonda Byrne</div>
+      <p class="book-card-bridge">The Secret said thoughts become things. This book shows you how — through the body, the garden, the platform, and the choice to come from love over fear.</p>
+    </div>
+    <div class="book-card">
+      <div class="book-card-title">The Gifts of Imperfection</div>
+      <div class="book-card-author">Brené Brown</div>
+      <p class="book-card-bridge">Brown gave you permission to be enough. This book shows you what to build once you believe it — a life organized around love instead of fear.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- AUTHOR -->
+<div class="author-section" id="author">
+  <div class="author-inner">
+    <span class="section-label">The Author</span>
+    <span class="author-name">Mahashwar</span>
+  	<p>Mahashwar is not writing from the mountaintop. He is writing from the middle of the climb, the same place you might be right now. He has spent over forty years helping people find their way to something better, and he has done it in prisons, mental health centers, classrooms, and software training rooms. He knows what it looks like when someone has forgotten what up feels like. And he knows the way back. He lives in Orlando, close to his children.</p>
+  </div>
+</div>
+
+<!-- EMAIL CAPTURE -->
+<div class="capture-section" id="notify">
+  <div class="capture-inner">
+    <span class="section-label">Stay Connected</span>
+    <h2 class="section-title" style="font-size: clamp(32px, 4vw, 44px);">Be the first to know<br>when the book is live.</h2>
+    <p style="color: var(--muted); font-size: 16px;">No noise. Just the moment it's available — plus early access to workshops and reader community.</p>
+    <form class="capture-form" name="notify" netlify>
+      <input type="email" name="email" class="capture-input" placeholder="Your email address" required>
+      <button type="submit" class="capture-btn">Notify Me</button>
+    </form>
+    <p class="capture-note">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2 class="final-title">
+    Live in love.<br>
+    <span class="gold">Not in fear.</span>
+  </h2>
+  <a href="#" class="btn-primary">Get the Book</a>
+  <p class="coming-soon" style="margin-top: 16px;">Available soon on Amazon</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-title">Love Me<br>Love,<br>Me</div>
+  <div class="footer-copy">© 2026 Mahashwar · lovemebook.com</div>
+</footer>
+
+</body>
+</html>
