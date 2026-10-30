@@ -539,7 +539,8 @@
 
   .capture-form {
     display: flex;
-    gap: 0;
+    flex-direction: column;
+    gap: 12px;
     margin-top: 40px;
   }
 
@@ -548,7 +549,6 @@
     padding: 16px 24px;
     background: var(--deep-blue);
     border: 1px solid var(--soft-line);
-    border-right: none;
     color: var(--cream);
     font-family: 'Jost', sans-serif;
     font-size: 16px;
@@ -655,8 +655,6 @@
     .book-grid { grid-template-columns: 1fr; }
     .currents-grid { grid-template-columns: 1fr; }
     .books-grid { grid-template-columns: 1fr; }
-    .capture-form { flex-direction: column; }
-    .capture-input { border-right: 1px solid var(--soft-line); border-bottom: none; }
     footer { flex-direction: column; gap: 16px; text-align: center; }
   }
 </style>
@@ -866,6 +864,8 @@
       <input type="text" name="FNAME" id="mce-FNAME" class="capture-input" placeholder="Name (optional)" autocomplete="given-name">
       <label for="mce-EMAIL" class="sr-only">Your email address</label>
       <input type="email" name="EMAIL" id="mce-EMAIL" class="capture-input" placeholder="Your email address" autocomplete="email" required>
+      <label for="mce-HEARD" class="sr-only">How did you hear about this? (optional)</label>
+      <input type="text" name="HEARD" id="mce-HEARD" class="capture-input" placeholder="How did you hear about this? (optional)" autocomplete="off" maxlength="200">
       <input type="hidden" name="tags" value="Love Me Waiting List">
       <div aria-hidden="true" style="position: absolute; left: -5000px;">
         <input type="text" name="b_fe2e2259efaff7a785a1b8743_5916e04693" tabindex="-1" value="">
