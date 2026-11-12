@@ -850,7 +850,7 @@
   	<p>Mahashwar is not writing from the mountaintop. He is writing from the middle of the climb, the same place you might be standing right now.</p>
 	<p>For over forty years he has helped people find their way to something better, in prisons, mental health centers, classrooms, and software training rooms. He knows what it looks like when someone has forgotten what up feels like, because he has forgotten it himself. He has been through a heart attack and the loss of love, and the long climb back after both.</p>
 	<p>This book is what he found along the way.</p>
-	<p>To invite him to speak or lead a workshop, write to <a href="mailto:info@lovemebook.com" style="color: var(--gold);">info@lovemebook.com</a>.</p>
+	<p>To invite him to speak or lead a workshop, write to <a class="email-link" style="color: var(--gold);">info [at] lovemebook [dot] com</a>.</p>
   </div>
 </div>
 
@@ -908,6 +908,14 @@
       a.addEventListener('click', function () { setOpen(false); });
     });
   })();
+</script>
+<script>
+  // Builds the email address in the browser so spam bots reading the raw page do not find it.
+  document.querySelectorAll('.email-link').forEach(function (el) {
+    var a = 'info' + '@' + 'lovemebook.com';
+    el.href = 'mailto:' + a;
+    el.textContent = a;
+  });
 </script>
 </body>
 </html>

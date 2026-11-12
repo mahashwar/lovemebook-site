@@ -135,7 +135,7 @@
   <p>This site, lovemebook.com, is run by Mahashwar, the author of <em>Love Me Love, Me</em>. This page explains what information the site collects, why, and what you can do about it. I have tried to say it plainly.</p>
 
   <h2>What I collect</h2>
-  <p><strong>What you give me.</strong> If you join the waiting list, you enter your email address and, if you choose, your name and how you heard about this site. That is all the form asks for. If you email me at info@lovemebook.com, I receive your email address and whatever you write.</p>
+  <p><strong>What you give me.</strong> If you join the waiting list, you enter your email address and, if you choose, your name and how you heard about this site. That is all the form asks for. If you email me at <a class="email-link">info [at] lovemebook [dot] com</a>, I receive your email address and whatever you write.</p>
   <p><strong>What is collected automatically.</strong> Like most websites, the servers that deliver this page can record technical details such as your IP address, browser type and the pages requested. Analytics (see below) also records general visit information.</p>
 
   <h2>How I use it</h2>
@@ -166,7 +166,7 @@
   <h2>Your choices</h2>
   <ul>
     <li><strong>Unsubscribe</strong> at any time with the link at the bottom of every email.</li>
-    <li><strong>Ask me</strong> to see, correct or delete what I hold about you by writing to <a href="mailto:info@lovemebook.com">info@lovemebook.com</a>. I will respond as soon as I can.</li>
+    <li><strong>Ask me</strong> to see, correct or delete what I hold about you by writing to <a class="email-link">info [at] lovemebook [dot] com</a>. I will respond as soon as I can.</li>
   </ul>
   <p>Depending on where you live, you may have additional rights under local law, such as in California, the European Union or the United Kingdom. Write to me and I will do my best to honor them.</p>
 
@@ -180,7 +180,7 @@
   <p>If I change how the site handles information, I will update this page and the date at the top.</p>
 
   <h2>Contact</h2>
-  <p>Questions about this policy or your information: <a href="mailto:info@lovemebook.com">info@lovemebook.com</a></p>
+  <p>Questions about this policy or your information: <a class="email-link">info [at] lovemebook [dot] com</a></p>
 </main>
 
 <footer>
@@ -188,5 +188,13 @@
   <div><a href="/privacy.html">Privacy Policy</a></div>
 </footer>
 
+<script>
+  // Builds the email address in the browser so spam bots reading the raw page do not find it.
+  document.querySelectorAll('.email-link').forEach(function (el) {
+    var a = 'info' + '@' + 'lovemebook.com';
+    el.href = 'mailto:' + a;
+    el.textContent = a;
+  });
+</script>
 </body>
 </html>
